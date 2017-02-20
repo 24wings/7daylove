@@ -1,6 +1,8 @@
 var keystone = require('keystone'),
     middleware = require('./middleware'),
+    scanner = require('./scanner'),
     importRoutes = keystone.importer(__dirname); //generate 
+
 
 // common  middleware
 keystone.pre('routes', middleware.initErrorHandlers);
@@ -25,7 +27,8 @@ var routes = {
 };
 
 exports = module.exports = function (app) {
-
+    scanner(app);
     app.get('/data/getData', routes.views.data.getData);
     app.get('/data/getDataById', routes.views.data.getDataById);
+
 };

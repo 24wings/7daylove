@@ -1,4 +1,5 @@
 /**
  * this file only load other model
  */
-require('./admin');
+require('./user');
+require('./player');

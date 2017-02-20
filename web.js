@@ -12,7 +12,7 @@ keystone.init({
     'views': 'templates/views',
     'view engine': 'jade',
     'auto update': true,
-    'mongo': 'mongodb://localhost/7daylove',
+    'mongo': 'mongodb://localhost/love',
     'cloudinary config': 'cloudinary://688229757297621:D-7VrFqtn6ayg6ItFNXSm52jcS0@dnf1ydl7w',
     'embedly api key': 'adb1c865a9bc489dad997a5f5bddcd6a',
     'session': true,
