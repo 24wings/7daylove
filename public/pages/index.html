@@ -1,0 +1,234 @@
+<!-- 导航开始 -->
+<div class="daohang">
+    <div class="daohang-box">
+        <div class="daohang-box-left">
+            <a href="" class="black">首页</a>
+            <a href="/#!/petLife">宠物生活</a>
+            <a href="">宠物资讯</a>
+            <a href="">宠物健康</a>
+            <a href="">宠物行为</a>
+            <a href="">宠物视频</a>
+        </div>
+        <form action="">
+            <button></button>
+            <input type="text">
+        </form>
+    </div>
+</div>
+<!-- 导航结束 -->
+<!-- 内容开始 -->
+<div class="neirong-box1">
+    <div ng-switch="{{$index}}" ng-repeat="petLife in top5PetLifes">
+        <div class="neirong-box1-1" ng-switch-when="0">
+            <a href=""><img src="{{petLife.image[0].url}}" alt=""></a>
+            <p>{{petLife.title}}</p>
+
+        </div>
+    </div>
+    <div class="neirong-box1-2">
+        <div class="neirong-box1-2-1" ng-repeat="petLife in top5PetLifes;" ng-show="$index>0">
+
+            <a href=""><img src="{{petLife.image[0].url}}" alt=""></a>
+            <p>{{petLife.title}}</p>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="neirong-box2">
+    <div class="neirong-box2-left">
+        <div class="zuixin">
+            <p class="zuixin-1"></p>
+            <p class="zuixin-2">最新<span>NEWS</span></p>
+        </div>
+        <div class="neirong-box2-left-nr" ng-repeat="petInformation in top3PetInformations">
+            <img src="{{petInformation.image[0].url}}" alt="">
+            <h2 style="float:none;">{{petInformation.title}}</h2>
+            <br>
+            <div ng-bind-html="petInformation.brief"></div>
+
+            <div class="biaoqian">
+                <a href="" ng-repeat="tag in petInformation.tags">标签</a>
+
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+    <div class="neirong-box2-right">
+        <div class="tab-jquery">
+            <ul>
+                <li class="ion">测评中心</li>
+                <li>人物访谈</li>
+            </ul>
+            <div class="tab-jquery-box" style="display:block;">
+                <img src="images/2015080517402458075.jpg" alt="">
+                <p>大牌试吃第六期《Zeal小牛尾骨》</p>
+            </div>
+            <div class="tab-jquery-box">
+                <img src="images/20150706134216accfb.png" alt="">
+                <p>大牌试吃第六期《Zeal小牛尾骨》</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--宠物生活-->
+<div class="neirong-bxo3">
+    <div class="neirong-box3-left" ng-if=" top5PetLifes.length>=3">
+        <div class="zuixin">
+            <p class="zuixin-1 bg"></p>
+            <p class="zuixin-2">生活<span>LIFE</span></p>
+        </div>
+        <div class="shenghuo-box1">
+            <h2>{{top5PetLifes[0].title}}</h2>
+            <img src="{{top5PetLifes[0].image[0].url}}" alt="">
+        </div>
+        <div class="shenghuo-box2">
+            <img src="{{top5PetLifes[1].image[0].url}}" alt="">
+            <h2>{{top5PetLifes[1].title}}</h2>
+            <p>{{top5PetLifes[1].brief}}</p>
+        </div>
+        <div class="shenghuo-box3">
+            <img src="{{top5PetLifes[2].image[0].url}}" alt="">
+            <h2>{{top5PetLifes[2].title}}</h2>
+            <p>{{top5PetLifes[2].brief}}</p>
+        </div>
+    </div>
+</div>
+<div class="neirong-box2">
+    <div class="neirong-box2-left">
+        <div class="zuixin">
+            <p class="zuixin-1 gb-1"></p>
+            <p class="zuixin-2">健康<span>HEAL</span></p>
+        </div>
+        <div class="neirong-box2-left-nr" ng-repeat=" petHeathy in top3PetHeathys">
+            <img src="{{petHeathy.image[0].url}}" alt="">
+            <h2>{{petHeathy.title}}</h2>
+            <p ng-bind-html="petHeathy.brief"></p>
+            <div class="biaoqian">
+                <a href="">陆龟</a>
+                <a href="">豹纹</a>
+                <a href="">威廉斯</a>
+                <a href="">摄影师</a>
+                <a href="">动物</a>
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="neirong-box2-right">
+        <h1><img src="images/01_17.png" alt="">问一问好主人</h1>
+        <img src="images/01_21.png" alt="">
+        <h3>关注"网易好主人"公众号养宠更轻松</h3>
+        <p>·猫咪多穰肾是什么？</p>
+        <p>·狗狗咬伤人怎么办？</p>
+        <p>·狗狗中暑怎么办？</p>
+        <span></span>
+        <li class="zd"><img src="images/01_25.png" alt="">扫描二维码提问</li>
+    </div>
+</div>
+<div class="neirong-box4">
+    <div class="zuixin">
+        <p class="zuixin-1 bg-3"></p>
+        <p class="zuixin-2">视频<span>VIDEO</span></p>
+    </div>
+</div>
+<div class="neirong-box5">
+    <div class="neirong-box1">
+        <div class="neirong-box1-1">
+            <a href=""><img src="images/20150908110455507c7.jpg" alt=""></a>
+            <p>爱懒床的金毛四兄弟</p>
+            <img src="images/51.png" alt="" class="bo-1">
+        </div>
+        <div class="neirong-box1-2">
+            <div class="neirong-box1-2-1">
+                <a href=""><img src="images/20150906150948222ec.jpg" alt=""></a>
+                <p>爱懒床的金毛四兄弟</p>
+                <img src="images/51.png" alt="" class="bo">
+            </div>
+            <div class="neirong-box1-2-1">
+                <a href=""><img src="images/2015090615060868042.jpg" alt=""></a>
+                <p>爱懒床的金毛四兄弟</p>
+                <img src="images/51.png" alt="" class="bo">
+            </div>
+            <div class="neirong-box1-2-1 top">
+                <a href=""><img src="images/2015082610264999a30.jpg" alt=""></a>
+                <p>爱懒床的金毛四兄弟</p>
+                <img src="images/51.png" alt="" class="bo">
+            </div>
+            <div class="neirong-box1-2-1 top">
+                <a href=""><img src="images/201508261025211dd02.jpg" alt=""></a>
+                <p>爱懒床的金毛四兄弟</p>
+                <img src="images/51.png" alt="" class="bo">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--宠物行为-->
+<div class="neirong-box2">
+    <div class="neirong-box2-left">
+        <div class="zuixin">
+            <p class="zuixin-1 bg-4"></p>
+            <p class="zuixin-2">行为<span>BEHAVIOR</span></p>
+        </div>
+        <div class="neirong-box2-left-nr" ng-repeat="petAction in top3PetActions">
+            <img src="{{petAction.image[0].url}}" alt="">
+            <h2>{{petAction.title}}</h2>
+            <p ng-bind-html="petAction.brief"></p>
+            <div class="biaoqian">
+                <a href="">陆龟</a>
+                <a href="">豹纹</a>
+                <a href="">威廉斯</a>
+                <a href="">摄影师</a>
+                <a href="">动物</a>
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+        <div class="neirong-box2-left-nr">
+            <img src="images/a_010.jpg" alt="">
+            <h2>总有些狗 对屎念念不忘</h2>
+            <p>如果有定时驱虫和打预防针可以把伤害减到最小，但下面所说的处理方式不见得对每只狗狗都有效，主人可能要具体狗狗具体分析，耐心尝试。</p>
+            <div class="biaoqian">
+                <a href="">陆龟</a>
+                <a href="">豹纹</a>
+                <a href="">威廉斯</a>
+                <a href="">摄影师</a>
+                <a href="">动物</a>
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+        <div class="neirong-box2-left-nr">
+            <img src="images/a_004.jpg" alt="">
+            <h2>研究发现野猪天生具有“磁性罗盘”</h2>
+            <p>研究报告作者罗斯拉夫．塞尔维尼（Jaroslav Cerveny）指称，野猪天生具有较好的导航能力，如果它们体内真的有着磁性罗盘，将也不足为奇。</p>
+            <div class="biaoqian">
+                <a href="">陆龟</a>
+                <a href="">豹纹</a>
+                <a href="">威廉斯</a>
+                <a href="">摄影师</a>
+                <a href="">动物</a>
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+    </div>
+    <div class="neirong-box2-right cc">
+        <a href=""><img src="images/20150706134216accfb.png" alt=""></a>
+        <h3>---《我的宠物朋友》---</h3>
+    </div>
+</div>
+
+
+<!-- 内容结束 -->

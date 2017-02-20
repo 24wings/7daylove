@@ -1,0 +1,70 @@
+extends ../layouts/base
+ 
+block content
+    .toubu
+        .toubu-left
+            a 
+                img(src="images/logo.png")
+        .toubu-right
+            a 
+                img(src="images/01_03.png")
+            a 
+                img(src="images/01_05.png")
+            p 设置首页
+
+    .daohang
+        .daohang-box
+            .daohang-box-left
+                a.black(href="#") 首页
+                a(href="#") 宠物生活
+                a(href="#") 宠物资讯
+                a(href="#") 宠物健康
+                a(href="#") 宠物行为
+                a(href="#") 宠物视频
+            form
+                button
+                input(type=text)
+
+
+        each petLife,i in petLifes
+            .neirong-box1
+                a(href="#")
+                       img(src=petLife.image(),alt=petLife.title)
+                       p #{i}
+              
+                   
+                    
+
+
+
+
+
+                //- 内容
+        .neirong-box1
+            .neirong-box1-1
+                a(href="#")
+                    img(src="images/f2b2b2e714954839a663c94afdb77b2c20161209115115.jpg")
+                    p 爱懒床的金毛四兄弟 
+            .neirong-box1-2
+                .neirong-box1-2-1
+                    a(href="#")
+                        img(src="images/666836910d5a4e09a1502e7f7a744d4d20161209115133.jpg")
+                    p 爱懒床的金毛四兄弟
+                .neirong-box1-2-1
+                    a(href="#")
+                        img(src="images/48428b3e81154eea9dc319a8912b186820161209115143.jpg")
+                    p 爱懒床的金毛四兄弟
+                .neirong-box1-2-1.top
+                    a(href="#")
+                        img(src="images/720ea4bba7d94dce94e32ea7f1640a1e20161208150426.jpg")
+                    p 爱懒床的金毛四兄弟
+                .neirong-box1-2-1.top
+                    a
+                        img(src="images/f10694097ffe474f8f81d92f215ffca420161208150415.jpg")
+                    p 爱懒床的金毛四兄弟
+
+    if petLifes.length
+        each petLife,i in petLifes
+            h3 
+                | #{petLife.title}
+

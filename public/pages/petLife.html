@@ -1,0 +1,54 @@
+<div class="live">
+    <div class="live-box-left">
+        <div class="neirong-box2-left-nr" ng-repeat="petLife in petLifes">
+            <img src="{{petLife.image[0].url}}" alt="" ng-click="goPetLifeDetail(petLife._id)">
+            <h2 ng-click="goPetLifeDetail(petLife._id)">{{petLife.title}}</h2>
+            <p>{{petLife.brief}}</p>
+            <div class="biaoqian">
+                <a href="">陆龟</a>
+                <a href="">豹纹</a>
+                <a href="">威廉斯</a>
+                <a href="">摄影师</a>
+                <a href="">动物</a>
+                <img src="images/01_13.png" alt="">
+                <span>7</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="live-box-right">
+        <div class="live-box-right-1">
+            <img src="images/wx-qrcode.png" alt="">
+            <p>扫二维码关注好主人微信公众号，参与互动，为爱宠赢好礼</p>
+        </div>
+        <div class="live-box-right-2">
+            <h3>热门文章</h3>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150923121226ba5c3.jpg" alt=""></a>
+                <a href="">
+                    <p>中华白海豚搁浅死亡</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/2015092210075889230.jpg" alt=""></a>
+                <a href="">
+                    <p>日本“打滚猫”爆红</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150923121406c8501.jpg" alt=""></a>
+                <a href="">
+                    <p>会骑摩托的八哥犬</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150918144944e9c2b.jpg" alt=""></a>
+                <a href="">
+                    <p>垃圾堆里狗叼出弃婴</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="jiazai">+加载更多</div>
+</div>
+<!-- 内容结束 -->

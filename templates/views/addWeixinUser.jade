@@ -1,0 +1,20 @@
+
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+        title= title || '文章列表页'
+        link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+        link(href="/css/reset.css", rel="stylesheet")   
+        link(href="/css/style.css" ,rel="stylesheet")
+        link(href="/assets/libs/bootstrap/dist/css/bootstrap.min.css" , rel="stylesheet")
+        link(href="/css/addWeixinUser.css", rel="stylesheet")
+        block css
+        block head
+    body
+        .input-group
+            span#basic-addon1.input-group-addon @
+            input(type="text",class="form-control",placeholder="用户名")
+        script(src="/assets/libs/jquery/dist/jquery.min.js")
+        script(src="/temp/addWeixinUser.js")
+

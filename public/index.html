@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>宠物网站</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="myApp">
+
+
+    <!-- 头部开始 -->
+    <div class="toubu">
+        <div class="toubu-left">
+            <a href=""><img src="images/logo.png" alt=""></a>
+        </div>
+        <div class="toubu-right">
+            <a href=""><img src="images/01_03.png" alt=""></a>
+            <a href=""><img src="images/01_05.png" alt=""></a>
+            <p>设置首页</p>
+        </div>
+    </div>
+    <!-- 头部结束 -->
+
+    <!--载入页面内容-->
+    <div ng-view></div>
+
+    <!-- 底部开始 -->
+    <div class="dibu">
+        <div class="dibu-box">
+            <img src="images/logo-white.png" alt="">
+            <div class="dibu-bxo-1">
+                <a href="">联系我们</a>
+                <a href="">关于我们</a>
+                <a href="">新浪微博</a>
+                <a href="">商务合作</a>
+                <a href="">微信公众号</a>
+                <p>网易公司版权所有</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/index.controller.js"></script>
+    <script src="js/controllers/petLife.controller.js"></script>
+    <script src="js/controllers/petLifeDetail.controller.js"></script>
+    <script src="js/directives/directives.js"></script>
+    <script src="js/directives/my-html.directives.js"></script>
+
+    <script src="js/components/coustom-html.js"></script>
+
+
+
+</body>
+
+</html>

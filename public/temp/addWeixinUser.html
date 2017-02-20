@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../assets/libs/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .input-group {
+            margin: 20px 0;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="userForm" action="/views/weixin/addWeixinUser" method="POST" style="margin-top: 40px;">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon ">姓名:</span>
+            <input type="text" name="username" class="form-control" required="true" placeholder="输入姓名" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon ">电话:</span>
+            <input name="phone" type="text" value="13212780816" pattern="^1[3-9]\d{9}$" title="请输入11未合法的手机号" class="form-control" required="true"
+                placeholder="输入你的手机号" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon ">QQ:</span>
+            <input name="qq" type="text" class="form-control" required="true" title="QQ不能为空" placeholder="输入QQ" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon ">年级:</span>
+            <input name="grader" type="text" class="form-control" required="true" placeholder="输入年级" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon ">专业:</span>
+            <input name="subject" type="text" class="form-control" required="true" placeholder="输入专业" aria-describedby="basic-addon1">
+        </div>
+        <button class="btn btn-success btn-block" onclick="addUser()" style="margin-top: 40px;">注册</button>
+    </form>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script>
+        function addUser() {
+            $('#userForm').ajaxForm(function (rtn) {
+                alert(rtn);
+            });
+        }
+    </script>
+</body>
+
+</html>

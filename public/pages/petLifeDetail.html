@@ -1,0 +1,55 @@
+<div class="live">
+    <div class="live-box-left">
+        <div class="bt">
+            <a href="/" class="a1">好主人</a>
+            <span class="s1">></span>
+            <a href="" class="a2">正文</a>
+            <h1>{{petLife.title}}</h1>
+            <span class="s2">{{petLife.createdAt | date: 'yyyy年MM月dd日' }}</span>
+            <span class="s2">{{petLife.author}}</span>
+            <span class="s3">0</span>
+            <img src="images/03_03.png" alt="" class="i1">
+            <li></li>
+        </div>
+        <p>{{petLife.brief}}</p>
+        <img src="{{petLife.image[0].url}}" alt="" class="i2">
+        <div ng-bind-html="petLife.content"></div>
+        <ul class="ul1">
+            <span class="span1">本文来源:{{petLife.sourceWebsite}}</span>
+            <span class="span2">责任编辑:{{petLife.author}} </span>
+        </ul>
+    </div>
+    <div class="live-box-right">
+        <div class="live-box-right-1">
+            <img src="images/wx-qrcode.png" alt="">
+            <p>扫二维码关注好主人微信公众号，参与互动，为爱宠赢好礼</p>
+        </div>
+        <div class="live-box-right-2">
+            <h3>热门文章</h3>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150923121226ba5c3.jpg" alt=""></a>
+                <a href="">
+                    <p>中华白海豚搁浅死亡</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/2015092210075889230.jpg" alt=""></a>
+                <a href="">
+                    <p>日本“打滚猫”爆红</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150923121406c8501.jpg" alt=""></a>
+                <a href="">
+                    <p>会骑摩托的八哥犬</p>
+                </a>
+            </div>
+            <div class="live-box-liebiao">
+                <a href=""><img src="images/20150918144944e9c2b.jpg" alt=""></a>
+                <a href="">
+                    <p>垃圾堆里狗叼出弃婴</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
