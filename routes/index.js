@@ -28,7 +28,4 @@ exports = module.exports = function (app) {
 
     app.get('/data/getData', routes.views.data.getData);
     app.get('/data/getDataById', routes.views.data.getDataById);
-    app.get('/views/weixin/article', routes.views.weixinArticle.allArticles);
-    app.get('/views/weixin/addWeixinUser', routes.views.addWeixinUser.getPage)
-    app.post('/views/weixin/addWeixinUser', routes.views.addWeixinUser.addWeixinUser);
 };
