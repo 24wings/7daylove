@@ -19,6 +19,18 @@ Player.add({
         required: true,
         index: true
     },
+    phone: {
+        label: '手机号',
+        type: String,
+        required: true,
+        initial: true
+    },
+    password: {
+        label: '密码',
+        type: String,
+        required: true,
+        initial: true
+    },
     age: {
         label: '年龄',
         type: Types.Number

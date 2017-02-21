@@ -8,7 +8,7 @@ keystone.init({
     'brand': 'Demo',
     // 'favicon':'public/favicon.ico',
     'less': 'public',
-    'static': 'public',
+    'static': 'public/dist',
     'views': 'templates/views',
     'view engine': 'jade',
     'auto update': true,

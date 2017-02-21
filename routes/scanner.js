@@ -3,16 +3,19 @@ var fs = require('fs');
 var routesDir = __dirname + '/autoRoute';
 
 /**文件路由层**/
-export var scanner = function (app) {
+module.exports = function (app) {
 
     function loadFile(filePath) {
-        var route = require(filePath).default;
+        var route = require(filePath);
         var routeObj = new route();
 
         if (routeObj) {
+            debugger;
             //导出对象的platform对象,service服务,action请求
             console.log(`loading route parttern:  ${routeObj.service}/:action`);
-            app.all(`/${routeObj.service}/:action`, function (req, res, next) {
+            app.get('/' + routeObj.service, function (req, res, next) {
+                console.log(req.params);
+
                 routeObj.doAction(req.params.action).bind(routeObj, req, res)();
             });
 
