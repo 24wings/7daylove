@@ -17,12 +17,6 @@
   },
   "homepage": "https://github.com/24wings/keystone-demo#readme",
   "dependencies": {
-
-    "@types/angular": "^1.6.5",
-    "@types/angularjs": "^1.5.14-alpha",
-    "jade": "^1.11.0",
-    "keystone": "^4.0.0-beta.5",
-    "underscore": "^1.8.3",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
@@ -31,8 +25,15 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
+    "@types/angular": "^1.6.5",
+    "@types/angularjs": "^1.5.14-alpha",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "jade": "^1.11.0",
+    "keystone": "^4.0.0-beta.5",
+    "ng2-bootstrap": "^1.3.3",
     "rxjs": "^5.1.0",
+    "underscore": "^1.8.3",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {

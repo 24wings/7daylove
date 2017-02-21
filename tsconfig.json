@@ -1,9 +1,10 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "moduleResolution": "classic",
-        "typeRoots": [
-            "node_modules/@types"
-        ]
-    }
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "classic",
+    "typeRoots": [
+      "node_modules/@types",
+      "public/src/types"
+    ]
+  }
 }

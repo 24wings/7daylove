@@ -1,0 +1,13 @@
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-phone"></i></span>
+  <input type="text" class="form-control" [(ngModel)]="user.phone" placeholder="手机号" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon2"><i class="glyphicon glyphicon-lock"></i></span>
+  <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="密码" aria-describedby="basic-addon2">
+</div>
+<button class="btn btn-success btn-block" (click)="login()">登录</button>
+<div class="row">
+  <div class="col-xs-4"><button class="btn btn-clear btn-block" (click)="goSignup()">注册</button></div>
+  <div class="col-xs-4 col-xs-offset-4" (click)="goForgotPassword()"><button class="btn btn-clear btn-block">忘记密码</button></div>
+</div>

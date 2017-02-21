@@ -1,0 +1,48 @@
+<h1>注册页面</h1>
+<div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+  <input type="text" [(ngModel)]="newUser.name" class="form-control" placeholder="姓名" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+  <input type="number" [(ngModel)]="newUser.phone" class="form-control" placeholder="手机号" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input type="password" [(ngModel)]="newUser.password" class="form-control" placeholder="密码">
+</div>
+<button class="btn btn-block btn-success" (click)="signup(  )">注册</button>
+<!--注册完成后,显示提示信息-->
+<div bsModal #alertModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">注册成功</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="alertModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container" *ngIf="!signupError">
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn btn-success">填写详细信息</button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn btn-primary">先去逛逛</button>
+            </div>
+          </div>
+          <div class="row">
+            <p>提示,只有填写了详细信息才可以参与一周CP配对哦</p>
+          </div>
+        </div>
+        <!--内容-->
+        <div class="container" *ngIf="signupError">
+          <div class="row">
+            {{signupError}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

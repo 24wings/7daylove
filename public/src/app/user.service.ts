@@ -5,13 +5,21 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
+  user = {
+    phone: '',
+    password: '',
+    info: ''
+  };
 
   constructor(public http: Http) {
 
-    this.http.get('http://localhost:3000/player/allPlayer?callback=JSONP_CALLBACK', {})
+    this.http.get('http://localhost:3000/player/allPlayer', {})
       .map(rtn => rtn.json())
       .toPromise().then(rtn => console.log(rtn))
 
   }
 
+  setUser(user) {
+
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
+import { RtnResult, User } from '../types/index.d';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +9,7 @@ import { UserService } from './user.service';
 export class AppComponent {
   title = 'app works!';
   constructor(userService: UserService) {
+    var a: RtnResult;
 
   }
 }
