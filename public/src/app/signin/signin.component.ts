@@ -14,7 +14,7 @@ export class SigninComponent implements OnInit {
     this.user.phone = localStorage.getItem('phone') ? localStorage.getItem('phone') : '';
     this.user.password = localStorage.getItem('password') ? localStorage.getItem('password') : '';
     if (this.user.phone && this.user.password) {
-      this.login()
+      this.login();
     }
 
   }
@@ -36,9 +36,9 @@ export class SigninComponent implements OnInit {
       .then((result: RtnResult) => {
         if (result.issuccess) {
           var user: User = result.data;
-          localStorage.setItem('phone', user.phone);
+          localStorage.setItem('phone', user.phone + '');
           localStorage.setItem('password', user.password);
-          this.userService.setUser(user);
+          this.userService.user = user;
           this.router.navigate(['index']);
 
 

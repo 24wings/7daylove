@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   @ViewChild('alertModal') public alertModal: ModalDirective;
   newUser: User = {
     name:'杨杰',
-    phone: 13212780816,
+    phone: '13212780816',
     password: '123'
   };
   signupError: string = '';
@@ -27,11 +27,10 @@ export class SignupComponent implements OnInit {
 
   signup() {
     this.http.post('/player/addPlayer', {
-
     }, {
         body: {
           name:this.newUser.name,
-          phone: this.newUser.phone,
+          phone:this.newUser.phone.toString(),
           password: this.newUser.password
         }
       }).map(response => response.json())
@@ -39,14 +38,17 @@ export class SignupComponent implements OnInit {
         if (!result.issuccess) {
           this.signupError = result.errorMsg;
         } else {
-          this.userService.setUser(result.data);
+          this.userService.user=result.data;
         }
         this.alertModal.show();
-      })
+      });
   }
 
   goInfoDetail() {
     this.router.navigate(['infoDetail']);
+  }
+  goIndex(){
+    this.router.navigate(['index']);
   }
 
 }

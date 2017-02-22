@@ -26,10 +26,10 @@
         <div class="container" *ngIf="!signupError">
           <div class="row">
             <div class="col-xs-6">
-              <button class="btn btn-success">填写详细信息</button>
+              <button class="btn btn-success" (click)="goInfoDetail()">填写详细信息</button>
             </div>
             <div class="col-xs-6">
-              <button class="btn btn-primary">先去逛逛</button>
+              <button class="btn btn-primary" (click)="goIndex()">先去逛逛</button>
             </div>
           </div>
           <div class="row">

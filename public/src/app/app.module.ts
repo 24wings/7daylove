@@ -13,6 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { IndexComponent } from './index/index.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { InfoDetailComponent } from './info-detail/info-detail.component';
+import { AsciiComponent } from './ascii/ascii.component';
 
 
 
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     SigninComponent,
     IndexComponent,
     ForgotPasswordComponent,
-    InfoDetailComponent
+    InfoDetailComponent,
+    AsciiComponent
   ],
   imports: [
     BrowserModule,

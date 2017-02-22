@@ -3,3 +3,5 @@
  */
 require('./user');
 require('./player');
+require('./radioQuestion');
+require('./anwserQuestion');

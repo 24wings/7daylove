@@ -1,3 +1,24 @@
 <p>
   info-detail works!
 </p>
+<div class="container" *ngFor="let  radioQuestion of allRadioQuestions">
+  <!--单选题-->
+  <div class="row">
+    {{radioQuestion.title}}
+  </div>
+  <div class="row">
+    <button *ngFor="let choose of radioQuestion.choose.split(',');let i=index">
+     <app-ascii [code]="i+65"></app-ascii> {{choose}}
+    </button>
+  </div>
+
+</div>
+
+<div class="container" *ngFor="let  anwserQuestion of allAnwserQuestions">
+  <div class="row">
+    {{anwserQuestion.title}}
+  </div>
+  <div class="row">
+    <textarea rows="" cols=""></textarea>
+  </div>
+</div>

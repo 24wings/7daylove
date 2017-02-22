@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'app-info-detail',
@@ -6,10 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-detail.component.css']
 })
 export class InfoDetailComponent implements OnInit {
+  allRadioQuestions: any= [];
+  allAnwserQuestions: any= [];
+  constructor(public http: Http) {
+    this.http.get('/player/allRadioQuestions').
+    map(response => response.json())
+    .toPromise()
+    .then(rtn => {
+ this.allRadioQuestions = rtn.data;
 
-  constructor() { }
+    });
+    this.http.get('/player/allAnwserQuestions')
+    .map(response => response.json())
+    .toPromise()
+    .then(rtn => {
+      if (rtn.issuccess) {
+        this.allAnwserQuestions = rtn.data;
+      }
+    });
+   }
 
   ngOnInit() {
   }
+
 
 }
