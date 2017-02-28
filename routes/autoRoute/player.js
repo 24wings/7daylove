@@ -2,6 +2,8 @@ var keystone = require('keystone');
 var Player = keystone.list('Player');
 var RadioQuestion = keystone.list('RadioQuestion');
 var AnwserQuestion = keystone.list('AnwserQuestion');
+var AnwserResult =  keystone.list('AnwserResult');
+var User  =  keystone.list('Player');
 class PlayerRoute {
   get service() {
     return "player"
@@ -22,10 +24,68 @@ class PlayerRoute {
         return this.allRadioQuestions;
       case "allAnwserQuestions":
         return this.allAnwserQuestions;
+        case "submitQuestions":
+        return this.submitQuestions;
       default:
         return this.notFound;
     }
   }
+
+  submitQuestions(req,res){
+    var {radios,anwsers,phone}=req.body;
+    console.log(req.body);
+    console.log(Array.isArray(radios),Array.isArray(anwsers));
+    if(Array.isArray(radios)&&Array.isArray(anwsers)&&phone){
+      /**
+       * 将每一个问题都进行分析整理,入库
+       */
+
+      Player.model.find({phone:phone}).limit(1).exec().then(docs=>{
+        var player =docs[0];
+        if(player){
+                 anwsers.forEach((anwser)=>{
+          console.log('anwser-id:',anwser._id,'player-id:',player._id);
+
+              AnwserQuestion.model.findById(anwser._id).exec().then(doc=>{
+                if(doc){
+                  var anwserQustion= doc;
+                  AnwserResult.model({
+                    fromUserId:player._id,
+                    fromUser:player._id,
+                    fromUsername:player.name,
+                    fromUserphone:player.phone,
+                    anwser:anwser.anwser,
+                    title:doc.title,
+                    maxHeights:doc.maxHeights,
+                     maxLetter:doc.maxLetter}).save(doc=>{
+                    console.log(doc);
+                  });
+                }else{
+                  /**
+                   * 后期修复bug
+                   */
+                  console.log('err');
+                  throw new Error('问题没找到')
+                }
+              });
+        });
+        }else{
+          res.json({
+            issucess:false,
+            errorMsg:'该用户不存在'
+          });
+        }
+      });
+
+    }else{
+      res.json({
+        issucess:false,
+        errorMsg:'参数不合法,请传递正确的单选题,问答题数组'
+      })
+    }
+    
+  }
+
   allAnwserQuestions(req, res) {
     AnwserQuestion.model.find().exec((err, docs) => {
       err ? res.json({
