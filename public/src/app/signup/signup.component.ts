@@ -5,6 +5,8 @@ import { User, RtnResult } from '../../types/index.d';
 import { ModalDirective } from 'ng2-bootstrap';
 import { UserService } from '../user.service';
 
+import "../rxjs-extentions";
+
 
 @Component({
   selector: 'app-signup',
@@ -26,6 +28,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
+    
     this.http.post('/player/addPlayer', {
     }, {
         body: {
@@ -33,19 +36,24 @@ export class SignupComponent implements OnInit {
           phone:this.newUser.phone.toString(),
           password: this.newUser.password
         }
-      }).map(response => response.json())
-      .toPromise().then((result: RtnResult) => {
+      }).map(res=>res.json())
+      .toPromise().then((result:any) => {
         if (!result.issuccess) {
-          this.signupError = result.errorMsg;
+          this.signupError = result.errorMsg; 
         } else {
           this.userService.user=result.data;
+          // localStorage.setItem('phone',this.newUser.phone),
+          // localStorage.setItem('password',this.newUser.password),
+       
+           
         }
         this.alertModal.show();
       });
+      
   }
 
   goInfoDetail() {
-    this.router.navigate(['infoDetail']);
+    this.router.navigate(['infoDetail']); 
   }
   goIndex(){
     this.router.navigate(['index']);

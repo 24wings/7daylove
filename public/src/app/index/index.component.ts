@@ -17,8 +17,9 @@ export class IndexComponent implements OnInit {
   }
 
   notSingle() {
+    var phone =localStorage.getItem('phone');
     this.http.get('/player/isFinishInfo', {
-      search: 'phone=' + this.userService.user.phone
+      search: 'phone=' + phone
     }).map(response => response.json())
     .toPromise().then((result:RtnResult) => {
       if(!result.data.isFinishInfo){

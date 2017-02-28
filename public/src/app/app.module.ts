@@ -1,13 +1,13 @@
-
+import './rxjs-extentions';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { UserService } from './user.service';
-import './rxjs-extentions';
+
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AlertModule, ModalModule } from 'ng2-bootstrap';
+import { AlertModule, ModalModule,ButtonsModule } from 'ng2-bootstrap';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { IndexComponent } from './index/index.component';
@@ -15,7 +15,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { InfoDetailComponent } from './info-detail/info-detail.component';
 import { AsciiComponent } from './ascii/ascii.component';
 
-
+  
 
 
 const appRoutes: Routes = [
@@ -42,7 +42,8 @@ const appRoutes: Routes = [
 
     RouterModule.forRoot(appRoutes),
     AlertModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

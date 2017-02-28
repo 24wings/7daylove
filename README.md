@@ -1,27 +1,50 @@
-# DaylovePublic
+2017.2.28日 天气:晴朗,星期二
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.
+------
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    今天完成工作计划
+    * 将选择题目完成了,现在要将表单提交功能以及提交后的答案记载功能和评分功能全部完成。
+    * 后续就是用angular2完成客户端匹配系统,以及自定义匹配系统。
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## 表单提交功能的实现设想
+* 每一个表单的提交都要顺便将其问题答案,以及评分的对象存入该表单,不仅仅是对象的引用(否则删除问题后都会失去该问题的引用出现来自异界的错误....)
+  [{问题的id,问题的答案,问题的}]=>
+  计算方式
 
-## Build
+  
+  1. 根据每一个问题的id=>获取该问题的数据,标题,所有,答案,满分评分,以及用户填写的答案。 单选题属于匹配题目,所以不计分数,当后台开始匹配的时候
+  2. 根据问答题的字数进行问答评分,将用户的答案和和问答题的问题,以及问答题的评分进行记录。
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+综上所述
 
-## Running unit tests
+ 需要一张 单选题答案表, 而每个用户都应该有一个单选题答案
+ 需要一张 问答题一答案表,每个用户应该有问题提答案
+ 每个用户应该有一个字段 是否填写完整了答案和个人信息
+ 所以后台应该返回
+ ```json
+ {
+     issucess:true,
+     radios:[{
+         _id:id,
+         title:'问题的标题'
+     }],
+     anwsers:[{
+         _id:id,
+         title:'问题'
+     }]
+ }
+```
+而前台应该提交完成的表单,将每一个单选题的id和问答题的id连着答案一起提交到后台,在后台进行单选题的id和问答题的id并将数据存入问答题答案表和单选题答案表,并将用户的的问答题答案表和单选题答案表填写完成
+```json
+{
+    userId:userId,
+    radios:[{_id:id,anwser:1}],
+    anwsers:[{_id:id,anwser:'答案'}]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+}
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -57,7 +57,7 @@ class PlayerRoute {
         phone: phone
       })
       .exec(function (err, doc) {
-        err ? res.json({
+        (err||!doc) ? res.json({
           issucess: false,
           errorMsg: err
         }) : res.json({

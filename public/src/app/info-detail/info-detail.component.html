@@ -7,9 +7,15 @@
     {{radioQuestion.title}}
   </div>
   <div class="row">
-    <button *ngFor="let choose of radioQuestion.choose.split(',');let i=index">
-     <app-ascii [code]="i+65"></app-ascii> {{choose}}
-    </button>
+    <span *ngFor="let choose of radioQuestion.choose.split(',');let i=index">
+    <div class="btn-group">
+
+ <label class="btn btn-success" [(ngModel)]="radioQuestion.anwser" btnRadio="choose"
+         uncheckable>  <app-ascii [code]="i+65"></app-ascii> {{choose}}
+</label>
+
+</div>
+    </span>
   </div>
 
 </div>

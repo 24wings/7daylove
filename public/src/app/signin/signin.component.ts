@@ -35,7 +35,7 @@ export class SigninComponent implements OnInit {
     }).map(response => response.json()).toPromise()
       .then((result: RtnResult) => {
         if (result.issuccess) {
-          var user: User = result.data;
+          var user = result.data;
           localStorage.setItem('phone', user.phone + '');
           localStorage.setItem('password', user.password);
           this.userService.user = user;
