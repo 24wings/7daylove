@@ -38,7 +38,7 @@ export class InfoDetailComponent implements OnInit {
     var finishAllRadio = true;
     var finishAllAnwserQuestion = true;
     this.allRadioQuestions.forEach(question => {
-      if (!question.anwser) {
+      if (!question.chooseed) {
         finishAllRadio = false;
       }
     });

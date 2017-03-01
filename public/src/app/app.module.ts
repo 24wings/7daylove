@@ -14,6 +14,7 @@ import { IndexComponent } from './index/index.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { InfoDetailComponent } from './info-detail/info-detail.component';
 import { AsciiComponent } from './ascii/ascii.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 
 
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'index', component: IndexComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent },
-  { path: 'infoDetail', component: InfoDetailComponent }
+  { path: 'infoDetail', component: InfoDetailComponent },
+  { path: 'admin', component: AdminComponent }
 ];
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     IndexComponent,
     ForgotPasswordComponent,
     InfoDetailComponent,
-    AsciiComponent
+    AsciiComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

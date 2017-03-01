@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <!--男方-->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="table table-striped">
+                    <thead>
+                        <th>姓名 </th>
+                        <th>手机号</th>
+                        <th>年龄</th>
+                        <th>身高</th>
+                        <th>所在城市</th>
+                        <th>问答题得分</th>
+                    </thead>
+                    <tr *ngFor="let boy of boys">
+                        <td>{{boy.name}}</td>
+                        <td>{{boy.phone}}</td>
+                        <td>{{boy.age}}</td>
+                        <td>{{boy.height}}</td>
+                        <td>{{boy.city}}</td>
+
+                        <td>{{boy.score}}</td>
+                    </tr>
+                </div>
+
+            </div>
+        </div>
+        <!--女方-->
+        <div class="col-md-6">
+            <div class="row" *ngFor="let girl of girls;">
+                {{girl.name}}
+            </div>
+        </div>
+
+    </div>
+</div>

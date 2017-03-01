@@ -1,36 +1,37 @@
 <div class="container" *ngFor="let  radioQuestion of allRadioQuestions">
-  <!--单选题-->
-  <div class="row">
-    {{radioQuestion.title}}
-  </div>
-  <div class="row">
-    <span *ngFor="let choose of radioQuestion.choose.split(',');let i=index">
+    <!--单选题-->
+    <div class="row">
+        {{radioQuestion.title}}
+    </div>
+    <div class="row">
+        <span *ngFor="let choose of radioQuestion.choose.split(',');let i=index">
     <div class="btn-group">
 
- <label class="btn btn-success" [(ngModel)]="radioQuestion.anwser" [btnRadio]="choose"
+ <label class="btn btn-success" [(ngModel)]="radioQuestion.chooseed" [btnRadio]="i"
          uncheckable>  <app-ascii [code]="i+65"></app-ascii> {{choose}}
 </label>
 </div>
    
     </span>
 
-    <h4>选中的答案:{{radioQuestion.anwser}}</h4>
-  </div>
+        <h4>选中的答案:{{radioQuestion.anwser}}</h4>
+    </div>
 </div>
 
 <div class="container" *ngFor="let  anwserQuestion of allAnwserQuestions">
-  <div class="row">
-    {{anwserQuestion.title}}
-  </div>
-  <div class="row">
-    <textarea class="form-control" [(ngModel)]="anwserQuestion.anwser"></textarea>
-  </div>
+    <div class="row">
+        {{anwserQuestion.title}}
+    </div>
+    <div class="row">
+        不少于<span style="background: #000;color:yellowgreen;">{{anwserQuestion.maxLetter}}</span>字哦
+        <textarea class="form-control" [(ngModel)]="anwserQuestion.anwser"></textarea>
+    </div>
 </div>
 
 
 
 <!--错误消息-->
 <alert type="danger" *ngIf="errorMsg">
-  <strong>{{errorMsg}}</strong>
+    <strong>{{errorMsg}}</strong>
 </alert>
 <button class="btn btn-success btn-block" (click)="checkAnwsers()">提交</button>

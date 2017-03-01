@@ -6,3 +6,4 @@ require('./player');
 require('./radioQuestion');
 require('./anwserQuestion');
 require('./anwserResult');
+require('./radioResult');

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
+import { Router } from '@angular/router';
 import { RtnResult, User } from '../types/index.d';
 @Component({
   selector: 'app-root',
@@ -8,8 +9,11 @@ import { RtnResult, User } from '../types/index.d';
 })
 export class AppComponent {
   title = 'app works!';
-  constructor(userService: UserService) {
-    var a: RtnResult;
+  constructor(userService: UserService, public router: Router) {
+    // var a: RtnResult;
+    this.router.navigate(['admin']);
+
+
 
   }
 }
